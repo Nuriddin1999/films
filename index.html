@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <form id="film-form">
+        <label for="title">Название:</label><br />
+        <div class="form__wrap">
+            <input class="form_input" type="text" id="title" name="title" required /><br />
+        </div>
+        <label for="genre">Жанр:</label><br />
+        <div class="form__wrap">
+            <input type="text" id="genre" name="genre" required /><br />
+        </div>
+        <label for="releaseYear">Год:</label><br />
+        <div class="form__wrap">
+            <input type="number" id="releaseYear" name="releaseYear" required /><br />
+        </div>
+        <input type="checkbox" id="isWatched" name="isWatched" />
+        <label for="isWatched">Успели посмотреть?</label><br />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <div class="wrapper">
+        <div class="filter">
+            <input id="filterTitle" type="text" placeholder="Название фильма" />
+            <input id="filterGenre" type="text" placeholder="Жанр" />
+            <input id="filterReleaseYear" type="number" placeholder="Год релиза" />
+            <select name="selectFilter" id="selectFilter">
+                <option value="">Все</option>
+                <option value="true">Просмотренные</option>
+                <option value="false">Непросмотренные</option>
+            </select>
+        </div>
+        <button id="removeAll" type="button">Удалить всё</button>
+    </div>
+
+    <table id="film-table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Жанр</th>
+                <th>Год</th>
+                <th>Успели посмотреть?</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody id="film-tbody">
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
